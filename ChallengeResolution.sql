@@ -54,3 +54,14 @@ FROM Filmes F
 INNER JOIN FilmesGenero AS FG ON F.Id = FG.IdFilme
 INNER JOIN Generos AS G ON FG.IdGenero = G.Id
 WHERE G.Genero = 'Mistério';
+
+
+-- Desafio 12: Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel
+SELECT
+	F.Nome,
+	A.PrimeiroNome,
+	A.UltimoNome,
+	EF.Papel
+FROM Filmes F
+INNER JOIN ElencoFilme AS EF ON F.Id = EF.IdFilme
+INNER JOIN Atores AS A ON EF.IdAtor = A.Id;
