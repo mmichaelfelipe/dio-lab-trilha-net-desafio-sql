@@ -44,3 +44,13 @@ SELECT
 FROM Filmes F
 INNER JOIN FilmesGenero AS FG ON F.Id = FG.IdFilme
 INNER JOIN Generos AS G ON FG.IdGenero = G.Id;
+
+
+-- Desafio 11: Buscar o nome do filme e o gênero do tipo "Mistério"
+SELECT 
+	F.Nome,
+	G.Genero
+FROM Filmes F
+INNER JOIN FilmesGenero AS FG ON F.Id = FG.IdFilme
+INNER JOIN Generos AS G ON FG.IdGenero = G.Id
+WHERE G.Genero = 'Mistério';
