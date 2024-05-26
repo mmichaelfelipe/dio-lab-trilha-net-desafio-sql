@@ -35,3 +35,12 @@ SELECT PrimeiroNome, UltimoNome FROM Atores WHERE Genero = 'M';
 
 -- Desafio 9: Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
 SELECT PrimeiroNome, UltimoNome FROM Atores WHERE Genero = 'F' ORDER BY PrimeiroNome;
+
+
+-- Desafio 10: Buscar o nome do filme e o gênero
+SELECT 
+	F.Nome,
+	G.Genero
+FROM Filmes F
+INNER JOIN FilmesGenero AS FG ON F.Id = FG.IdFilme
+INNER JOIN Generos AS G ON FG.IdGenero = G.Id;
